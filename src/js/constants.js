@@ -3,4 +3,6 @@ export const API_ENDPOINTS = {
   CATEGORIES: '/products/category-list',
   PRODUCTS: '/products',
   PRODUCTS_BY_CATEGORY: 'https://dummyjson.com/products/category/',
+  PRODUCT_BY_ID: '/products/',
+  SEARCH: '/products/search?q=',
 };

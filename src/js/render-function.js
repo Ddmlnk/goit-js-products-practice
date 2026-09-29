@@ -30,3 +30,34 @@ export function renderProducts(products) {
 export function clearProductsList() {
   refs.productsList.innerHTML = '';
 }
+
+export function showNotFound() {
+  refs.notFound.classList.add('not-found--visible');
+}
+
+export function hideNotFound() {
+  refs.notFound.classList.remove('not-found--visible');
+}
+export function renderProductInModal({
+  images,
+  title,
+  description,
+  shippingInformation,
+  returnPolicy,
+  price,
+  thumbnail,
+  tags,
+}) {
+  const tagsMarkup = tags.map(tag => `<li>${tag}</li>`).join('');
+  const markup = `<img class="modal-product__img" src='${images[0]}' alt='${title}' />
+   <div class="modal-product__content"> <p class="modal-product__title">${title}</p>
+   <ul class="modal-product__tags"> ${tagsMarkup} </ul>
+   <p class="modal-product__description">${description}</p>
+   <p class="modal-product__shipping-information">Shipping:${shippingInformation}</p>
+   <p class="modal-product__return-policy">Return Policy: ${returnPolicy}</p>
+   <p class="modal-product__price">Price: ${price} $</p>
+   <button class="modal-product__buy-btn" type="button">Buy</button> 
+   </div>`;
+
+  refs.modalProduct.innerHTML = markup;
+}

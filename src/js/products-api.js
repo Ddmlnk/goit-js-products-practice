@@ -16,3 +16,16 @@ export async function getProductsByCategory(category) {
   );
   return responce.data;
 }
+export async function getProductById(productId) {
+  const responce = await axios.get(
+    `${API_ENDPOINTS.PRODUCT_BY_ID}${productId}`
+  );
+  console.log(responce.data);
+  return responce.data;
+}
+
+export async function searchProducts(query) {
+  const responce = await axios.get(`${API_ENDPOINTS.SEARCH}${query}`);
+  console.log(responce.data);
+  return responce.data;
+}
