@@ -1,4 +1,5 @@
 import { refs } from './refs';
+import { isInCart, isInWishList } from './storage';
 
 export function renderCategories(categories) {
   const categoriesAll = ['All', ...categories];
@@ -39,6 +40,7 @@ export function hideNotFound() {
   refs.notFound.classList.remove('not-found--visible');
 }
 export function renderProductInModal({
+  id,
   images,
   title,
   description,
@@ -60,4 +62,24 @@ export function renderProductInModal({
    </div>`;
 
   refs.modalProduct.innerHTML = markup;
+  updateModalButtons(id);
+}
+
+export function updateModalButtons(currentProductId) {
+  if (isInWishList(currentProductId)) {
+    refs.addToWishListButton.textContent = 'Remove from wishlist';
+  } else {
+    refs.addToWishListButton.textContent = 'Add to wishlist';
+  }
+
+  if (isInCart(currentProductId)) {
+    refs.addToCartButton.textContent = 'Remove from cart';
+  } else {
+    refs.addToCartButton.textContent = 'Add to cart';
+  }
+}
+
+export function updateCounters(wishlistItems, cartItems) {
+  refs.wishlistCount.textContent = wishlistItems.length;
+  refs.cartCount.textContent = cartItems.length;
 }

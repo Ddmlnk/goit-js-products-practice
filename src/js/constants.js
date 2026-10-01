@@ -6,3 +6,9 @@ export const API_ENDPOINTS = {
   PRODUCT_BY_ID: '/products/',
   SEARCH: '/products/search?q=',
 };
+
+export const STORAGE_KEYS = {
+  WISHLIST: 'wishlist',
+  CART: 'cart',
+  THEME: 'theme',
+};

@@ -3,6 +3,7 @@ import { refs } from './refs';
 export function openModal() {
   refs.modal.classList.add('modal--is-open');
   document.body.style.overflow = 'hidden';
+
   document.addEventListener('keydown', handleEscapePress);
   refs.modal.addEventListener('click', handleModalClick);
   refs.modalCloseButton.addEventListener('click', closeModal);
@@ -20,5 +21,5 @@ function handleEscapePress(e) {
   if (e.code === 'Escape') closeModal();
 }
 function handleModalClick(event) {
-  if (event.target.className.includes('modal')) closeModal();
+  if (event.target === event.currentTarget) closeModal();
 }

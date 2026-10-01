@@ -1,7 +1,10 @@
 //Логіка сторінки Home
 
 import {
+  handleAddToCartButtonClick,
+  handleAddToWishlistButton,
   handleCategoryClick,
+  handleClearSearchButtonClick,
   handleProductClick,
   handleSearchSubmit,
   initHomePage,
@@ -15,3 +18,6 @@ refs.categoriesList.addEventListener('click', handleCategoryClick);
 
 refs.productsList.addEventListener('click', handleProductClick);
 refs.searchForm.addEventListener('submit', handleSearchSubmit);
+refs.clearSearchButton.addEventListener('click', handleClearSearchButtonClick);
+refs.addToWishListButton.addEventListener('click', handleAddToWishlistButton);
+refs.addToCartButton.addEventListener('click', handleAddToCartButtonClick);
