@@ -58,3 +58,10 @@ export function removeFromCart(id) {
   const updateWishlist = wishlistItems.filter(item => item !== id);
   saveToLS(STORAGE_KEYS.CART, updateWishlist);
 }
+
+export function getTheme() {
+  return getFromStorage(STORAGE_KEYS.THEME) || 'light';
+}
+export function saveTheme(theme) {
+  saveToLS(STORAGE_KEYS.THEME, theme);
+}

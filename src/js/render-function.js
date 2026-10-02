@@ -83,3 +83,28 @@ export function updateCounters(wishlistItems, cartItems) {
   refs.wishlistCount.textContent = wishlistItems.length;
   refs.cartCount.textContent = cartItems.length;
 }
+
+export function showLoadMoreButton() {
+  refs.loadMoreButton.classList.remove('is-hidden');
+}
+
+export function hideLoadMoreButton() {
+  refs.loadMoreButton.classList.add('is-hidden');
+  refs.loadMoreButton.classList.remove('is-loading');
+}
+
+export function showLoadMoreButtonLoading() {
+  refs.loadMoreButton.classList.add('is-loading');
+}
+export function hideLoadMoreButtonLoading() {
+  refs.loadMoreButton.classList.remove('is-loading');
+}
+
+export function updateCartSammary(products) {
+  refs.cartValue.textContent = products.length;
+  const totalPrice = products.reduce((acc, product) => {
+    return acc + product.price;
+  }, 0);
+
+  refs.cartPrice.textContent = Math.round(totalPrice) + '$';
+}
