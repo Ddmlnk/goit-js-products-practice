@@ -1,0 +1,2 @@
+import{i as e,r as t,h as d,a,l as i,b as n,c as s}from"./assets/handlers-DI-8mkZB.js";import"./assets/vendor-4yCzdkXl.js";document.addEventListener("DOMContentLoaded",e);t.productsList.addEventListener("click",d);t.addToWishListButton.addEventListener("click",async()=>{a(),await i()});t.addToCartButton.addEventListener("click",n);t.toggleThemeButton.addEventListener("click",s);
+//# sourceMappingURL=wishlist.js.map
